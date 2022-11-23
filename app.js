@@ -1,3 +1,4 @@
+const SidekickDebugger = require('@runsidekick/sidekick-agent-nodejs');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -15,6 +16,14 @@ var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
 
 var app = express();
+
+// start sidekick agent
+SidekickDebugger.start({ 
+  applicationName: 'Todo - Express',
+  applicationStage: 'prod',
+  applicationVersion: '1.0.0',
+  apiKey: '<api-key>'
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,18 +1,25 @@
-# todos-express-password
+# todos-express-password-sidekick
+This example is derived from https://github.com/passport/todos-express-password
 
-This app illustrates how to use [Passport](https://www.passportjs.org/) with
-[Express](https://expressjs.com/) to sign users in with a username and password.
+This app illustrates how to setup [Sidekick Node.js Agent](https://www.runsidekick.com/) with
+[Express](https://expressjs.com/) to live debug your applications.
+
 Use this example as a starting point for your own web applications.
 
 ## Quick Start
 
-To run this app, clone the repository and install dependencies:
+To run this app, fork & clone the repository and install dependencies:
 
 ```bash
-$ git clone https://github.com/passport/todos-express-password.git
-$ cd todos-express-password
+$ git clone https://github.com/<your-user-name>/todos-express-password-sidekick.git
+$ cd todos-express-password-sidekick
 $ npm install
 ```
+
+Get your Sidekick API Key: https://docs.runsidekick.com/installation/get-api-key-and-token
+
+- Change the < api-key > field at 25th line of app.js with your API Key.
+
 
 Then start the server.
 
@@ -22,57 +29,18 @@ $ npm start
 
 Navigate to [`http://localhost:3000`](http://localhost:3000).
 
-## Tutorial
-
-Follow along with the step-by-step [Username & Password Tutorial](https://www.passportjs.org/tutorials/password/)
-to learn how this app was built.
-
-## Overview
-
-This app illustrates how to build a todo app with sign in functionality using
-Express, Passport, and the [`passport-local`](https://www.passportjs.org/packages/passport-local/)
-strategy.
-
-This app is a traditional web application, in which application logic and data
-persistence resides on the server.  HTML pages and forms are rendered by the
-server and client-side JavaScript is not utilized (or kept to a minimum).
-
-This app is built using the Express web framework.  Data is persisted to a
-[SQLite](https://www.sqlite.org/) database.  HTML pages are rendered using [EJS](https://ejs.co/)
-templates, and are styled using vanilla CSS.
-
-When a user first arrives at this app, they are prompted to sign in.  Once
-authenticated, a login session is established and maintained between the server
-and the user's browser with a cookie.
-
-After signing in, the user can view, create, and edit todo items.  Interaction
-occurs by clicking links and submitting forms, which trigger HTTP requests.
-The browser automatically includes the cookie set during login with each of
-these requests.
-
-When the server receives a request, it authenticates the cookie and restores the
-login session, thus authenticating the user.  It then accesses or stores records
-in the database associated with the authenticated user.
-
 ## Next Steps
 
-* Extend with credential management.
+* Connect your source if you are using Web IDE
 
-  Study [todos-express-password-credential-management](https://github.com/passport/todos-express-password-credential-management)
-  to learn how to use the [Credential Managment](https://www.w3.org/TR/credential-management-1/)
-  API to help the user store and select their password.
+   [Check docs](https://docs.runsidekick.com/installation/get-api-key-and-token)
 
-* Add social login.
+* Continue with your IDE
 
-  Study [todos-express-google](https://github.com/passport/todos-express-google)
-  to learn how to let users sign in with their social network account, using
-  their existing profile and avoiding the need to sign up and repeatedly enter
-  account details.
+  * [Visual Studio Code Extension](https://docs.runsidekick.com/plugins/visual-studio-code-extension-python-and-node.js)
+  * [WebStorm Plugin](https://docs.runsidekick.com/plugins/webstorm-plugin-node.js)
 
-* Add passwordless.
-
-  Study [todos-express-webauthn](https://github.com/passport/todos-express-webauthn)
-  to learn how to let users sign in with biometrics or a security key.
+* Start debugging!
 
 ## License
 
@@ -80,4 +48,4 @@ in the database associated with the authenticated user.
 
 ## Credit
 
-Created by [Jared Hanson](https://www.jaredhanson.me/)
+Original version Created by [Jared Hanson](https://www.jaredhanson.me/)
