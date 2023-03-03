@@ -1,3 +1,5 @@
+require('dotenv').config();
+const thundra = require("@thundra/core");
 const SidekickDebugger = require('@runsidekick/sidekick-agent-nodejs');
 var createError = require('http-errors');
 var express = require('express');
@@ -22,7 +24,7 @@ SidekickDebugger.start({
   applicationName: 'Todo - Express',
   applicationStage: 'prod',
   applicationVersion: '1.0.0',
-  apiKey: '<api-key>'
+  apiKey: process.env.sidekick_key
 });
 
 // view engine setup
@@ -31,6 +33,11 @@ app.set('view engine', 'ejs');
 
 app.locals.pluralize = require('pluralize');
 
+thundra.init({
+  apiKey:process.env.thundra_key
+})
+
+app.use(thundra.expressMW());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

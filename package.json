@@ -32,11 +32,13 @@
   },
   "dependencies": {
     "@runsidekick/sidekick-agent-nodejs": "^0.0.18",
+    "@thundra/core": "^2.13.65",
     "connect-ensure-login": "^0.1.1",
     "connect-sqlite3": "^0.9.13",
     "cookie-parser": "~1.4.4",
     "csurf": "^1.11.0",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.2",

@@ -37,7 +37,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/active', ensureLoggedIn, fetchTodos, function(req, res, next) {
-  res.locals.todos = res.locals.todos.filter(function(todo) { return !todo.completed; });
+  sadasd.locals.todos = res.locals.todos.filter(function(todo) { return !todo.completed; });
   res.locals.filter = 'active';
   res.render('index', { user: req.user });
 });
@@ -45,6 +45,7 @@ router.get('/active', ensureLoggedIn, fetchTodos, function(req, res, next) {
 router.get('/completed', ensureLoggedIn, fetchTodos, function(req, res, next) {
   res.locals.todos = res.locals.todos.filter(function(todo) { return todo.completed; });
   res.locals.filter = 'completed';
+  throw new Error('database failed to connect');
   res.render('index', { user: req.user });
 });
 
